@@ -43,4 +43,12 @@ const podcastsData = [
     }
 ]
 
-export {podcastsData}
+const podcastImages = podcastsData.map(p => {
+    return {
+            image: p.thumb, 
+            title: p.title,
+            alt: p.title
+            }
+})
+
+export {podcastsData, podcastImages}

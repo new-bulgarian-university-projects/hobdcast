@@ -1,5 +1,6 @@
-import {imageProps} from '../utils/constants';
+const imageProps = require('../utils/constants').imageProps;
 
+console.log(process.env)
 const articlesData = [
     {
         id: 1,
@@ -60,4 +61,14 @@ const articlesData = [
     }
 ]
 
-export {articlesData};
+const articleImages = articlesData.map(a => {
+                                        return {
+                                            title: a.title,
+                                            text: a.text,
+                                            url: a.image.src
+                                        }});
+
+module.exports = 
+{
+    articlesData, articleImages
+}
