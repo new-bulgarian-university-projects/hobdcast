@@ -23,8 +23,7 @@ const app = (
   <BrowserRouter>
     <BreadcrumbsProvider>
     <div>
-      <a href={apiUrl + "/api/hello"}>XML</a>
-      <App/ >
+      <App />
     </div>
     </BreadcrumbsProvider>
   </BrowserRouter>

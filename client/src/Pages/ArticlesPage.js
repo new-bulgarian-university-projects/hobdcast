@@ -6,19 +6,18 @@ import { Route } from 'react-router-dom'
 import Article from '../ArticleComponent/Article';
 
 import ArticlePanel from '../ArticlePanelComponent/ArticlePanel';
+import Custombc from '../BreacrumbComponent/BreadcrumbComponent'
 
 import {articlesData} from '../data/articles-mock'
 import {routers} from '../utils/routers';
+import {breadcrumbFlows} from '../utils/bcFlow';
 
 class ArticlesPage extends Component {
   render(){
-    return <div>
-      <BreadcrumbsItem 
-        glyph='glyphicon glyphicon-book' 
-        to={routers.articlesPage}>
-              &nbsp; Articles
-        </BreadcrumbsItem>
+    let breadcrumbs = <Custombc bcFlow={breadcrumbFlows.articlesPageFlow} />;
 
+    return <div>
+      {breadcrumbs}
       <h1>Articles list</h1>
       
       <Grid>

@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { BreadcrumbsItem } from '../Navbar/NavbarInit';
+import {Breadcrumb} from 'react-bootstrap'
 import {routers} from '../utils/routers';
-import { articlesData } from '../data/articles-mock';
-import {Modal, Button} from 'react-bootstrap';
+import {breadcrumbFlows} from '../utils/bcFlow';
+import {articlesData } from '../data/articles-mock';
+import Custombc from '../BreacrumbComponent/BreadcrumbComponent';
 import { withRouter } from 'react-router-dom';
+import {Image} from 'react-bootstrap';
+
 
 class Article extends Component{
     constructor(props, context) {
@@ -37,32 +41,35 @@ class Article extends Component{
         if(article === undefined)
             return;
 
-        return(
-            <div>
-                <BreadcrumbsItem 
-                    glyph='glyphicon glyphicon-list' 
-                    to={`${routers.article}/${articleId}`}>
-                        &nbsp;  {articleId}
-                </BreadcrumbsItem>
 
-                <Modal show={this.state.show} onHide={this.handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{article.title}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <p>
-                        {article.text}
-                    </p>
-                </Modal.Body>
-                <Modal.Footer>
-                    <p class='text-muted'>
-                        <small>created on </small> {article.createdOn} <small>by </small> {article.author}
-                    </p>
-                    <hr/>
-                    <Button onClick={this.handleClose}>Close</Button>
-                </Modal.Footer>
-                </Modal>
-            </div>
+        const articleBcFlow = breadcrumbFlows.articlesPageFlow;
+        articleBcFlow.push({
+            name: article.title,
+            url: article.url
+        });
+
+        let breadcrumbs = <Custombc bcFlow={articleBcFlow} />;
+
+        return(
+            <di>
+                {breadcrumbs}
+
+                <h2>{article.title}</h2>
+                <hr/>
+                <p>
+                    {article.text}
+                </p>
+                <Image alt={article.image.alt} 
+                        src={article.image.src} 
+                        responsive  />
+            
+                <hr />
+                <p class='text-muted'>
+                    <small>created on </small> {article.createdOn} <small>by </small> {article.author}
+                </p>
+                <hr/>
+                    
+            </di>
         );
     };
 }

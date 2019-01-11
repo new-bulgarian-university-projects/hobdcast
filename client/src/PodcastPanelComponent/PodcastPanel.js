@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import {routers} from '../utils/routers'
-import {Col, Thumbnail, Button, Image} from 'react-bootstrap'
+import {Image} from 'react-bootstrap'
 
 class PodcastPanel extends Component{ 
     render(){

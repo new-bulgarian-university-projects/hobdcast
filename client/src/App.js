@@ -21,35 +21,19 @@ import Podcast from './PodcastComponent/Podcast';
 class App extends Component {
   render() {
     return (
-      <div>
-        <BreadcrumbsItem glyph='home' to={base_path}>
-          Home Page
-        </BreadcrumbsItem>
-
+      <div>       
         <Navbar/>
-
-        <Breadcrumbs
-          item={CrumbIconItem}
-          container={BootstrapBreadcrumb}
-          finalProps={{active: true}}
-          duplicateProps={{to: 'href'}}
-       />
 
         <Grid>
           <Route exact path={routers.base} component={Home} />
+          <Route path={`${routers.podcast}/:id`} component={Podcast} />
           <Route path={routers.podcastsPage} component={PodcastsPage} />
           <Route path={`${routers.article}/:id`} component={Article} />
-          <Route path={`${routers.podcast}/:id`} component={Podcast} />
           <Route path={routers.articlesPage} component={ArticlesPage} />
           <Route path={routers.aboutPage} component={AboutPage} />
         </Grid>
 
-        <Breadcrumbs
-          item={CrumbItem}
-          container={BootstrapBreadcrumb}
-          finalProps={{active: true}}
-          duplicateProps={{to: 'href'}}
-        />
+        
 
       </div>
     );

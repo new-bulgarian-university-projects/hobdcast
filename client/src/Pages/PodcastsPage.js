@@ -1,30 +1,30 @@
 import React, { Component } from 'react'
 
-import { BreadcrumbsItem } from '../Navbar/NavbarInit';
 import PodcastPanel from '../PodcastPanelComponent/PodcastPanel'
-
+import {breadcrumbFlows} from '../utils/bcFlow';
+import Custombc from '../BreacrumbComponent/BreadcrumbComponent';
 import {base_path} from '../utils/constants'
 
 import {podcastsData} from '../data/podcasts-mock';
 
 
-const PodcastsPage = ({children}) => (
-  <div>
-    {/* with this it adds this to the breadcrumb route */}
-    <BreadcrumbsItem glyph='
-      glyphicon glyphicon-sound-stereo' 
-      to={base_path+'/podcasts'}>
-          &nbsp; Podcast Episodes
-    </BreadcrumbsItem>
+class PodcastsPage extends Component {
+  render(){
 
-    <h1>Episodes listed here</h1>
-
+    const breadcrumb = <Custombc bcFlow={breadcrumbFlows.podcastsPageFlow}/>;
+    return(
     <div>
-      {podcastsData.map(p => <PodcastPanel podcast = {p}/>)}
+      {breadcrumb}
+      <h1>Episodes listed here</h1>
+  
+      <div>
+        {podcastsData.map(p => <PodcastPanel key={p.id} podcast = {p}/>)}
+      </div>
+  
     </div>
-
-  </div>
-)
+    )
+  }
+}
 
 export default PodcastsPage
 
