@@ -10,30 +10,6 @@ import {Image} from 'react-bootstrap';
 
 
 class Article extends Component{
-    constructor(props, context) {
-        super(props, context);
-    
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
-    
-        this.state = {
-          show: true
-        };
-      }
-    
-      handleClose() {
-        this.setState({ show: false });
-      }
-    
-      handleShow() {
-        this.setState({ show: true });
-      }
-
-      componentDidUpdate(prevProps){
-        if (this.props.location !== prevProps.location) {
-            this.setState({ show: true });
-          }
-      }
     render(){
         const articleId = this.props.match.params.id;
         const article = articlesData.find(a => a.id == articleId);
