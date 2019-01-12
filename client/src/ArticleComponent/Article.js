@@ -27,7 +27,11 @@ class Article extends Component{
             <div>
                 {breadcrumbs}
 
-                <h1>{article.title}</h1>
+                <h1>
+                    <span class='text-muted'>
+                        {article.title}
+                    </span>
+                </h1>
                 <hr/>
                 <p style={textStyle}>
                     {article.text}

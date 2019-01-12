@@ -11,16 +11,17 @@ class ArticlesPage extends Component {
 
     return <div>
       {breadcrumbs}
-      <h1>Articles list</h1>
-      
+      <h1>
+        <span class='text-muted'>
+          List of <strong> articles </strong>
+        </span>
+      </h1>
+      <hr/>
       <Grid>
         {articlesData.map(a => <ArticlePanel key={a.id} article={a} />)}
       </Grid>
-
-      
     </div>
+  }
 }
-}
-
 export default ArticlesPage
 
