@@ -39,10 +39,6 @@ const TheNavbar = ({children}) => {
         </NavItem>
       </Nav>
 
-      <Nav pullRight>
-       <Button>Hi</Button>
-      </Nav>
-
     </Navbar.Collapse>
 
   </Navbar>)

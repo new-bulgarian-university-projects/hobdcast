@@ -1,6 +1,7 @@
 const routers = require('./client/src/utils/routers').routers;
 const sm = require('sitemap');
 const articlesImages = require('./client/src/data/articles-mock').articleImages;
+const podcastImages = require('./client/src/data/podcasts-mock').podcastImages;
 
 const hostname = process.env.NODE_ENV ? process.env.REACT_APP_DOMAIN  : 'http://localhost:3000';
 
@@ -18,6 +19,16 @@ const image_sitemap = sm.createSitemap({
         img: articlesImages.map(i => {
             return {
                 url: hostname + i.url,
+                caption: i.text,
+                title: i.title,
+                geoLocation: 'Sofia, Bulgaria'
+            }
+        })
+    },{
+        url: routers.podcastsPage,
+        img: podcastImages.map(i =>{
+            return {
+                url: i.url,
                 caption: i.text,
                 title: i.title,
                 geoLocation: 'Sofia, Bulgaria'

@@ -70,5 +70,6 @@ const articleImages = articlesData.map(a => {
 
 module.exports = 
 {
-    articlesData, articleImages
+    articlesData, 
+    articleImages
 }
