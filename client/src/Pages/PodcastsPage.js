@@ -13,7 +13,12 @@ class PodcastsPage extends Component {
     return(
       <div>
         {breadcrumb}
-        <h1>Episodes listed here</h1>
+        <h2>
+          <span class='text-muted'>
+            List of <strong>Podcast</strong> episodes
+          </span>
+        </h2>
+        <hr/>
     
         <div>
           {podcastsData.map(p => <PodcastPanel key={p.id} podcast = {p}/>)}
