@@ -20,18 +20,16 @@ app.get('/xml/sitemap', (req, res) => {
 });
 
 app.get('/xml/imagemap', (req, res) => {
-  res.header('Content-Type', 'application/xml');
-  const xml = sitemapGenerator.image_sitemap.toString();
+    const xml = sitemapGenerator.image_sitemap.toString();
     res.header('Content-Type', 'application/xml');
     res.send(xml);
 });
 
-
-app.post('/api/world', (req, res) => {
-  console.log(req.body);
-  res.send(
-    `I received your POST request. This is what you sent me: ${req.body.post}`,
-  );
+app.get('/xml/videomap', (req, res) => {
+    const xml = sitemapGenerator.video_sitemap.toString();
+    console.log(process.env.NODE_ENV)
+    res.header('Content-Type', 'application/xml');
+    res.send(xml);
 });
 
 if (process.env.NODE_ENV === 'production') {

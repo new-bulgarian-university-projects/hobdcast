@@ -51,7 +51,16 @@ const podcastImages = podcastsData.map(p => {
            }
 })
 
+const podcastVideos = podcastsData.map(p => {
+    return{
+        thumb: p.thumb,
+        title: p.title,
+        description: p.description
+    }
+})
+
 module.exports =  {
     podcastsData, 
-    podcastImages
+    podcastImages,
+    podcastVideos
 }
