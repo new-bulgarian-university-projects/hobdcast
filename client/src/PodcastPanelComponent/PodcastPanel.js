@@ -31,7 +31,9 @@ class PodcastPanel extends Component{
 
         return (
             <div>
-                <Link style={linkStyle} 
+                <Link 
+                      title={this.props.podcast.title}
+                      style={linkStyle} 
                       to={`${routers.podcast}/${this.props.podcast.id}`}>
                     <div style={panelStyle}>
                         <p>

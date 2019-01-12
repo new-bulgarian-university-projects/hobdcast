@@ -11,7 +11,7 @@ const TheNavbar = ({children}) => {
 
     <Navbar.Header>
       <Navbar.Brand>
-        <a href={base_path}>
+        <a title="Home" href={base_path}>
           hobdcast
         </a>
       </Navbar.Brand>

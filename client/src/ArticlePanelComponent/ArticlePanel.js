@@ -21,7 +21,7 @@ class ArticlePanel extends Component{
             };
 
         return(    
-            <Link to={`${routers.article}/${this.props.article.id}`}>
+            <Link title={this.props.article.title} to={`${routers.article}/${this.props.article.id}`}>
               <Col xs={5} md={5}>
                 <Thumbnail>
                         <h3 class='text-muted'>
@@ -38,11 +38,6 @@ class ArticlePanel extends Component{
                     >
                     {this.props.article.description}</p>
                   <p>
-                  {/* <Link to={routers.article + `/${this.props.article.id}`}>
-                    <Button bsStyle="success">
-                        Read
-                    </Button>
-                  </Link> */}
                   </p>
                 </Thumbnail>
               </Col>
