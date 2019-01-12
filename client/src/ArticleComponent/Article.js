@@ -9,27 +9,27 @@ class Article extends Component{
     render(){
         const articleId = this.props.match.params.id;
         const article = articlesData.find(a => a.id == articleId);
-        console.log(article)
         if(article === undefined)
             return;
 
-        
-        // copy the array
         const articleBcFlow = breadcrumbFlows.articlesPageFlow.slice();
         articleBcFlow.push({
             name: article.title,
             url: article.url
         });
         let breadcrumbs = <Custombc bcFlow={articleBcFlow} />;
-        console.log("article flow: ", articleBcFlow);
+
+        const textStyle = {
+            fontSize: '18px'
+        };
 
         return(
             <div>
                 {breadcrumbs}
 
-                <h2>{article.title}</h2>
+                <h1>{article.title}</h1>
                 <hr/>
-                <p>
+                <p style={textStyle}>
                     {article.text}
                 </p>
                 <Image alt={article.image.alt} 
