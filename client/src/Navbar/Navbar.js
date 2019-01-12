@@ -1,10 +1,6 @@
-import React, { Component } from 'react'
-import { Glyphicon, Navbar, Nav, NavDropdown, Button } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
-
-import MenuItem from './MenuItem'
+import React from 'react'
+import { Navbar, Nav } from 'react-bootstrap'
 import NavItem from './NavItem'
-
 import {base_path} from '../utils/constants'
 import {routers} from '../utils/routers';
 
@@ -41,27 +37,6 @@ const TheNavbar = ({children}) => {
         <NavItem glyph="glyphicon glyphicon-book" to={routers.aboutPage} eventKey={2}>
           <span style={style} >About us</span>
         </NavItem>
-
-        <NavDropdown id="basic-nav-dropdown" eventKey={3}
-          title={
-            <span><Glyphicon glyph="glyphicon glyphicon-plus" /> More</span>
-          }
-        >
-          <MenuItem glyph="calendar" to={base_path+'/tools/events'} eventKey={3.2}>
-            Events
-          </MenuItem>
-          <MenuItem glyph="signal" to={base_path+'/tools/statistics'} eventKey={3.1}>
-            Statistics
-          </MenuItem>
-          <MenuItem glyph="wrench" to={base_path+'/tools/settings'} eventKey={3.3}>
-            Settings
-          </MenuItem>
-        </NavDropdown>
-
-      </Nav>
-
-      <Nav pullRight>
-       <Button>Hi</Button>
       </Nav>
 
     </Navbar.Collapse>

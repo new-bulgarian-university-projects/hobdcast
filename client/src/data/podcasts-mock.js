@@ -41,10 +41,13 @@ const podcastsData = [
 
 const podcastImages = podcastsData.map(p => {
     return {
-            image: p.thumb, 
+            url: p.thumb, 
             title: p.title,
             alt: p.title
-            }
+           }
 })
 
-export {podcastsData, podcastImages}
+module.exports =  {
+    podcastsData, 
+    podcastImages
+}
