@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {breadcrumbFlows} from '../utils/bcFlow';
 import Custombc from '../BreacrumbComponent/BreadcrumbComponent';
+import Googlemap from '../GoogleMapComponent/Googlemap'; 
 
 class Home extends Component {
 
@@ -8,6 +9,14 @@ class Home extends Component {
     return(
     <div>
       <Custombc bcFlow={breadcrumbFlows.home} />
+
+      <Googlemap
+        isMarkerShown
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `400px` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+      />
+
       <h1>Home Page</h1>
       <div>
       Hodbcast is a platform for us, our hobbies and out passions. 
