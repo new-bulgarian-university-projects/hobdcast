@@ -8,6 +8,10 @@ class Footer extends Component{
         return(
             <div>
                 <Navbar inverse collapseOnSelect>
+                <Navbar.Header>
+                    <Navbar.Toggle />
+                </Navbar.Header>
+
                 <Navbar.Collapse>
                     <Nav>
                     <NavItem eventKey={1} href={`${constants.serverUrl}/xml/sitemap`}>
