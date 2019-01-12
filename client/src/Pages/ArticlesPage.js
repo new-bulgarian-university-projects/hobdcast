@@ -21,7 +21,7 @@ class ArticlesPage extends Component {
       <h1>Articles list</h1>
       
       <Grid>
-        {articlesData.map(a => <ArticlePanel article={a} />)}
+        {articlesData.map(a => <ArticlePanel key={a.id} article={a} />)}
       </Grid>
 
       

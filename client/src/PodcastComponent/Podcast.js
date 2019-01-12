@@ -14,7 +14,7 @@ class Podcast extends Component{
         if(podcast === undefined)
             return;
         
-        let podcastBcFlow = breadcrumbFlows.podcastsPageFlow;
+        let podcastBcFlow = breadcrumbFlows.podcastsPageFlow.slice();
         podcastBcFlow.push({
             name: podcast.title,
             url: podcast.url

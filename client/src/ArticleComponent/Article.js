@@ -17,17 +17,18 @@ class Article extends Component{
         if(article === undefined)
             return;
 
-
-        const articleBcFlow = breadcrumbFlows.articlesPageFlow;
+        
+        // copy the array
+        const articleBcFlow = breadcrumbFlows.articlesPageFlow.slice();
         articleBcFlow.push({
             name: article.title,
             url: article.url
         });
-
         let breadcrumbs = <Custombc bcFlow={articleBcFlow} />;
+        console.log("article flow: ", articleBcFlow);
 
         return(
-            <di>
+            <div>
                 {breadcrumbs}
 
                 <h2>{article.title}</h2>
@@ -45,7 +46,7 @@ class Article extends Component{
                 </p>
                 <hr/>
                     
-            </di>
+            </div>
         );
     };
 }

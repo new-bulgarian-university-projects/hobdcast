@@ -17,9 +17,11 @@ const podcastsPageFlow = [
     home,
     new BreadcrumbFlow("Podcasts", routers.podcastsPage)
 ];
-exports.breadcrumbFlows = {
+let breadcrumbFlows = {
     home,
     about,
     articlesPageFlow,
     podcastsPageFlow
 };
+
+export {breadcrumbFlows}
