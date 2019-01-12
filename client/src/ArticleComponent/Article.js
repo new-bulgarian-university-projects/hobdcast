@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { BreadcrumbsItem } from '../Navbar/NavbarInit';
-import {Breadcrumb} from 'react-bootstrap'
-import {routers} from '../utils/routers';
 import {breadcrumbFlows} from '../utils/bcFlow';
 import {articlesData } from '../data/articles-mock';
 import Custombc from '../BreacrumbComponent/BreadcrumbComponent';
-import { withRouter } from 'react-router-dom';
 import {Image} from 'react-bootstrap';
 
 

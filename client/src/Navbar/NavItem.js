@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 import { NavItem } from 'react-bootstrap'
 import itemFactory from './itemFactory'
 

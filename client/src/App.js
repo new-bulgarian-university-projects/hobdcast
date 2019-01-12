@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { Grid, Breadcrumb as BootstrapBreadcrumb } from 'react-bootstrap'
+import { Grid } from 'react-bootstrap'
 
 import Navbar from './Navbar'
 import Home from './Pages/Home'
@@ -30,8 +30,6 @@ class App extends Component {
             <Route path={routers.aboutPage} component={AboutPage} />
           </Switch>
         </Grid>
-
-        
 
       </div>
     );

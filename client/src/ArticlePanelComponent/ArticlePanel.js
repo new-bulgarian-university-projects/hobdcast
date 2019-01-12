@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {Col, Thumbnail, Button, Image} from 'react-bootstrap'
+import {Col, Thumbnail, Image} from 'react-bootstrap'
 import {routers} from '../utils/routers'
 import { Link } from "react-router-dom";
-import { base_path } from '../utils/constants';
 
 class ArticlePanel extends Component{
     render(){

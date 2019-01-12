@@ -1,10 +1,6 @@
-import React, { Component } from 'react'
-import { Glyphicon, Navbar, Nav, NavDropdown, Button } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
-import { Link } from 'react-router-dom';
-import MenuItem from './MenuItem'
+import React from 'react'
+import { Navbar, Nav, Button } from 'react-bootstrap'
 import NavItem from './NavItem'
-
 import {base_path} from '../utils/constants'
 import {routers} from '../utils/routers';
 

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { podcastsData } from '../data/podcasts-mock';
-import {Modal, Button} from 'react-bootstrap';
-import { withRouter } from 'react-router-dom';
 import {breadcrumbFlows} from '../utils/bcFlow';
 import Custombc from '../BreacrumbComponent/BreadcrumbComponent';
 
