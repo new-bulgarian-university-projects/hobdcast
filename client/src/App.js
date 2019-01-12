@@ -8,6 +8,7 @@ import PodcastsPage from './Pages/PodcastsPage'
 import ArticlesPage from './Pages/ArticlesPage'
 import AboutPage from './Pages/AboutPage'
 import NotFound from './Pages/NotFound'
+import TermsAndConditionsPage from './Pages/TermsAndConditionsPage';
 
 import {routers} from './utils/routers';
 import Article from './ArticleComponent/Article';
@@ -29,6 +30,7 @@ class App extends Component {
             <Route exact path={`${routers.article}/:id`} component={Article} />
             <Route path={routers.articlesPage} component={ArticlesPage} />
             <Route path={routers.aboutPage} component={AboutPage} />
+            <Route path={routers.termsPage} component={TermsAndConditionsPage} />
             <Route path='*' component={NotFound} />
           </Switch>
         </Grid>

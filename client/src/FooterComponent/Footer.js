@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
 import constants from '../utils/constants';
+import {routers} from '../utils/routers';
 class Footer extends Component{
     render(){
         console.log(constants.serverUrl)
@@ -22,6 +23,11 @@ class Footer extends Component{
                     </NavItem>
                     <NavItem eventKey={3} href={`${constants.serverUrl}/xml/videomap`}>
                         Videomap
+                    </NavItem>
+                    </Nav>
+                    <Nav pullRight>
+                    <NavItem eventKey={2} href={`${routers.termsPage}`}>
+                        Terms And Conditions
                     </NavItem>
                     </Nav>
                 

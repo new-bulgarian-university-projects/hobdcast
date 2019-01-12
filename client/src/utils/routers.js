@@ -13,6 +13,8 @@ const routers = {
     article: `${articlesPage}/article`,
     
     aboutPage: `${base_path}/about`,
+
+    termsPage: `${base_path}/terms`
 }
 
 exports.routers = routers;
