@@ -43,7 +43,7 @@ class PodcastPanel extends Component{
                          style={imageStyle} />
 
                         <p>{this.props.podcast.shortDescription}</p>
-                        <p>createD on {this.props.podcast.date}</p>
+                        <p>created on {this.props.podcast.date}</p>
                     </div>
                 </Link>
             </div>
