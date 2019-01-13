@@ -14,18 +14,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // deply to heroku - https://medium.freecodecamp.org/how-to-make-create-react-app-work-with-a-node-backend-api-7c5c48acb1b0
 
 // API calls
-app.get('/xml/sitemap', (req, res) => {
+app.get('/sitemap.xml', (req, res) => {
   res.header('Content-Type', 'application/xml');
   res.send(sitemapGenerator.xml_sitemap.toString());
 });
 
-app.get('/xml/imagemap', (req, res) => {
+app.get('/imagemap.xml', (req, res) => {
     const xml = sitemapGenerator.image_sitemap.toString();
     res.header('Content-Type', 'application/xml');
     res.send(xml);
 });
 
-app.get('/xml/videomap', (req, res) => {
+app.get('/videomap.xml', (req, res) => {
     const xml = sitemapGenerator.video_sitemap.toString();
     console.log(process.env.NODE_ENV)
     res.header('Content-Type', 'application/xml');
