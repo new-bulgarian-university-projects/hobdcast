@@ -6,8 +6,8 @@ import { InfoWindow, withGoogleMap, withScriptjs, GoogleMap, Marker } from 'reac
 
 const Map = compose(
     withStateHandlers(() => ({
-        isMarkerShown: false,
-        markerPosition: null
+        isMarkerShown: true,
+        markerPosition: {latitude: 42.698334, longitude: 23.319941}
       }), {
         onMapClick: ({ isMarkerShown }) => (e) => ({
             markerPosition: e.latLng,
@@ -19,8 +19,9 @@ const Map = compose(
 )
     (props =>
         <GoogleMap
-            defaultZoom={8}
-            defaultCenter={{ lat: -34.397, lng: 150.644 }}
+            defaultZoom={12}
+            isMarkerShown={true}
+            defaultCenter={{ lat: 42.698334, lng: 23.319941 }}
             onClick={props.onMapClick}
         >
             {props.isMarkerShown && <Marker position={props.markerPosition} />}
@@ -39,6 +40,7 @@ export default class MapContainer extends React.Component {
         return (
             <div style={{ height: '100%' }}>
                 <Map 
+                    isMarkerShown={true}
                     googleMapURL={apiKey}
                     loadingElement={<div style={{ height: `100%` }} />}
                     containerElement={<div style={{ height: `400px` }} />}

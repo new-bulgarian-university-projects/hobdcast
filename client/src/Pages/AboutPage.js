@@ -1,20 +1,35 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {breadcrumbFlows} from '../utils/bcFlow';
 import Custombc from '../BreacrumbComponent/BreadcrumbComponent';
 import Googlemap from '../GoogleMapComponent/Googlemap'; 
 
-const AboutPage = ({children}) => (
-  <div>
-   <Custombc bcFlow={breadcrumbFlows.about} />
+class AboutPage extends Component {
+  render(){
+    const homeDiv = {
+      marginBottom: '10px'
+    };
 
-    <h1>About us</h1>
-    <Googlemap
-          isMarkerShown
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `400px` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-        />
-  </div>
-)
+    return(
+      <div itemScope style={homeDiv}>
+        <Custombc bcFlow={breadcrumbFlows.about} />
+        
+        <h1 itemProp='title'><small>About us</small></h1>
+        <article itemProp='aboutUs'>
+            We are friends and enthusiast who are passionate about sports and unordinary hobbies.
+            Here we will discuss and upload articles about interesting stuff that you can do in your free time
+            to relieve the stress. We are located in Sofia, Bulgaria.
+        </article>
+        <hr/>
+            <Googlemap
+            itemProp='location'
+            isMarkerShown
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `400px` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+            />
+    </div>
+  )} 
+}
 
 export default AboutPage
+    

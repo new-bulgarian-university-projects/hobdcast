@@ -20,7 +20,6 @@ class Home extends Component {
       marginBottom: '10px'
     };
 
-    console.log(homeImages)
     return(
     <div style={homeDiv}>
        <Helmet>
