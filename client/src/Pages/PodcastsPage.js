@@ -17,6 +17,7 @@ class PodcastsPage extends Component {
             <title>hobdcast - Podcast Page</title> 
             <meta name="description" content="Page with all of the podcast episodes" />
             <meta name="robots" content="index, follow" />
+            <meta name="keywords" content="sport, articles, hobdcast, bulgaria, unordinary hobbies, podcasts" />
         </Helmet>
         {breadcrumb}
         <section itemScope itemProp='podcast list'>

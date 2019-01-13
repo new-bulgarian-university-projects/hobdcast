@@ -26,6 +26,7 @@ class Home extends Component {
             <title>hobdcast - Home</title> 
             <meta name="description" content='Welcome to the hobdcast website. Here you will explore and ffind different articles and podcasts about hobbies and sports.' />
             <meta name="robots" content="index, follow" />
+            <meta name="keywords" content="sport, articles, hobby, about, sofia, bulgaria, hobbies, podcasts" />
         </Helmet>
       
       <Custombc bcFlow={breadcrumbFlows.home} />
