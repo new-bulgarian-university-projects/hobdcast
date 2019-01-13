@@ -26,8 +26,8 @@ class ArticlesPage extends Component {
         </h1>
         <hr/>
         <section itemScope itemProp='articlesPanelList'>
-          <Grid itemprop='articlePanel'>
-            {articlesData.map(a => <ArticlePanel key={a.id} article={a} />)}
+          <Grid itemScope itemprop='articlePanel'>
+            {articlesData.map(a => <ArticlePanel itemprop="article" key={a.id} article={a} />)}
             </Grid>
             </section>
       </section>

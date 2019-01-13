@@ -28,8 +28,8 @@ class PodcastsPage extends Component {
             </h1>
             <hr/>
             <section itemScope itemProp='podcastsPanelList'>
-                <div itemProp='podcastPanel'>
-                  {podcastsData.map(p => <PodcastPanel key={p.id} podcast = {p}/>)}
+                <div itemScope itemProp='podcastPanel'>
+                  {podcastsData.map(p => <PodcastPanel itemProp='podcastEpisode' key={p.id} podcast = {p}/>)}
                 </div>
             </section>
         </section>
