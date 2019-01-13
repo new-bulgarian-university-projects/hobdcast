@@ -1,10 +1,11 @@
 const routers = require('./client/src/utils/routers').routers;
 const sm = require('sitemap');
 const articlesImages = require('./client/src/data/articles-mock').articleImages;
-const podcastMaterials =  require('./client/src/data/podcasts-mock'); 
 const constants = require('./client/src/utils/constants');
+const podcastMaterials =  require('./client/src/data/podcasts-mock'); 
 const podcastImages = podcastMaterials.podcastImages;
 const podcastVideos = podcastMaterials.podcastVideos;
+const homeImages = require('./client/src/data/home-data').homeImages;
 
 const hostname = process.env.NODE_ENV ? process.env.REACT_APP_DOMAIN  : 'http://localhost:3000';
 
@@ -30,6 +31,16 @@ const image_sitemap = sm.createSitemap({
     },{
         url: `${constants.serverUrl}/${routers.podcastsPage}`,
         img: podcastImages.map(i =>{
+            return {
+                url: i.url,
+                caption: i.text,
+                title: i.title,
+                geoLocation: 'Sofia, Bulgaria'
+            }
+        })
+    },{
+        url: `${constants.serverUrl}/${routers.base}`,
+        img: homeImages.map(i =>{
             return {
                 url: i.url,
                 caption: i.text,
