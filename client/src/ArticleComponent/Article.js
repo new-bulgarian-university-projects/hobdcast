@@ -26,26 +26,30 @@ class Article extends Component{
         return(
             <div>
                 {breadcrumbs}
-
-                <h1>
-                    <span class='text-muted'>
-                        {article.title}
-                    </span>
-                </h1>
-                <hr/>
-                <p style={textStyle}>
-                    {article.text}
-                </p>
-                <Image alt={article.image.alt} 
-                        src={article.image.src} 
-                        responsive  />
-            
-                <hr />
-                <p class='text-muted'>
-                    <small>created on </small> {article.createdOn} <small>by </small> {article.author}
-                </p>
-                <hr/>
-                    
+                <article itemScope>
+                    <h1 itemProp='title'>
+                        <span class='text-muted'>
+                            {article.title}
+                        </span>
+                    </h1>
+                    <hr/>
+                    <p 
+                        itemProp='article'
+                        style={textStyle}>
+                        {article.text}
+                    </p>
+                    <Image alt={article.image.alt} 
+                            src={article.image.src} 
+                            responsive  />
+                
+                    <hr />
+                    <p 
+                        itemProp='date'
+                        class='text-muted'>
+                        <small>created on </small> {article.createdOn} <small>by </small> {article.author}
+                    </p>
+                    <hr/>  
+                </article>
             </div>
         );
     };

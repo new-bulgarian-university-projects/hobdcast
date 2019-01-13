@@ -11,18 +11,21 @@ class PodcastsPage extends Component {
     console.log("render podcast page")
     let breadcrumb = <Custombc bcFlow={breadcrumbFlows.podcastsPageFlow}/>;
     return(
-      <div>
+      <div itemScope>
         {breadcrumb}
-        <h2>
-          <span class='text-muted'>
-            List of <strong>Podcast</strong> episodes
-          </span>
-        </h2>
-        <hr/>
-    
-        <div>
-          {podcastsData.map(p => <PodcastPanel key={p.id} podcast = {p}/>)}
-        </div>
+        <section itemScope itemProp='podcast list'>
+            <h2 itemProp='sectionTitle'>
+              <span class='text-muted'>
+                List of <strong>Podcast</strong> episodes
+              </span>
+            </h2>
+            <hr/>
+            <section itemScope itemProp='podcastsPanelList'>
+                <div itemProp='podcastPanel'>
+                  {podcastsData.map(p => <PodcastPanel key={p.id} podcast = {p}/>)}
+                </div>
+            </section>
+        </section>
     
       </div>
     )

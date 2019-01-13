@@ -38,27 +38,35 @@ class Podcast extends Component{
         return(
             <div>
                 <Custombc bcFlow={podcastBcFlow} />
+                <section itemScope>
+                    <h3 itemProp='title'>{podcast.title}</h3>
+                    <div>
 
-                <h3>{podcast.title}</h3>
-                <div>
-
-                <iframe style={frameStyle} 
-                        title={podcast.title} 
-                        width="560" 
-                        height="315" 
-                        src={podcast.videoUrl} 
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen='true'></iframe>
-                    <p style={descStyle}>
-                        {podcast.description}
+                    <iframe 
+                            itemProp='video'
+                            style={frameStyle} 
+                            title={podcast.title} 
+                            width="560" 
+                            height="315" 
+                            src={podcast.videoUrl} 
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen='true'></iframe>
+                        <p 
+                            itemProp='text'
+                            style={descStyle}>
+                            {podcast.description}
+                        </p>
+                    </div>
+                    <hr/>
+                    <p
+                        itemProp='date'  
+                        style={footer} 
+                        className='text-muted'>
+                        <small>created on </small> {podcast.date} <small>by </small> {podcast.author}
                     </p>
-                </div>
-                <hr/>
-                <p style={footer} class='text-muted'>
-                    <small>created on </small> {podcast.date} <small>by </small> {podcast.author}
-                </p>
-                <hr/>
+                    <hr/>
+                </section>
                     
             </div>
         );

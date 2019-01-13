@@ -11,15 +11,19 @@ class ArticlesPage extends Component {
 
     return <div>
       {breadcrumbs}
-      <h1>
-        <span class='text-muted'>
-          List of <strong> articles </strong>
-        </span>
-      </h1>
-      <hr/>
-      <Grid>
-        {articlesData.map(a => <ArticlePanel key={a.id} article={a} />)}
-      </Grid>
+      <section itemScope>
+        <h1 itemProp='title'>
+          <span class='text-muted'>
+            List of <strong> articles </strong>
+          </span>
+        </h1>
+        <hr/>
+        <section itemScope itemProp='articlesPanelList'>
+          <Grid itemprop='articlePanel'>
+            {articlesData.map(a => <ArticlePanel key={a.id} article={a} />)}
+            </Grid>
+            </section>
+      </section>
     </div>
   }
 }
