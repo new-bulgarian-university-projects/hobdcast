@@ -20,11 +20,11 @@ class PodcastsPage extends Component {
         </Helmet>
         {breadcrumb}
         <section itemScope itemProp='podcast list'>
-            <h2 itemProp='sectionTitle'>
+            <h1 itemProp='sectionTitle'>
               <span class='text-muted'>
                 List of <strong>Podcast</strong> episodes
               </span>
-            </h2>
+            </h1>
             <hr/>
             <section itemScope itemProp='podcastsPanelList'>
                 <div itemProp='podcastPanel'>

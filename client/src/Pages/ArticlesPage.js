@@ -15,6 +15,7 @@ class ArticlesPage extends Component {
             <title>hobdcast - Articles Page</title> 
             <meta name="description" content="Page with all of the articles" />
             <meta name="robots" content="index, follow" />
+            <meta name="keywords" content="sport, articles, hobby, hobbies, podcasts" />
         </Helmet>
       {breadcrumbs}
       <section itemScope>
