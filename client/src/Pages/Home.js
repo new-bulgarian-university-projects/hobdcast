@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {breadcrumbFlows} from '../utils/bcFlow';
 import Custombc from '../BreacrumbComponent/BreadcrumbComponent';
 import Googlemap from '../GoogleMapComponent/Googlemap'; 
+import {Helmet} from "react-helmet";
 
 // images
 // https://f4.bcbits.com/img/0009799082_10.jpg
@@ -12,6 +13,12 @@ class Home extends Component {
   render(){
     return(
     <div>
+       <Helmet>
+            <title>hobdcast - Home</title> 
+            <meta name="description" content='Welcome to the hobdcast website. Here you will explore and ffind different articles and podcasts about hobbies and sports.' />
+            <meta name="robots" content="index, follow" />
+        </Helmet>
+      
       <Custombc bcFlow={breadcrumbFlows.home} />
 
       <Googlemap

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import PodcastPanel from '../PodcastPanelComponent/PodcastPanel'
 import {breadcrumbFlows} from '../utils/bcFlow';
 import Custombc from '../BreacrumbComponent/BreadcrumbComponent';
+import {Helmet} from "react-helmet";
 
 import {podcastsData} from '../data/podcasts-mock';
 
@@ -12,6 +13,11 @@ class PodcastsPage extends Component {
     let breadcrumb = <Custombc bcFlow={breadcrumbFlows.podcastsPageFlow}/>;
     return(
       <div itemScope>
+        <Helmet>
+            <title>hobdcast - Podcast Page</title> 
+            <meta name="description" content="Page with all of the podcast episodes" />
+            <meta name="robots" content="index, follow" />
+        </Helmet>
         {breadcrumb}
         <section itemScope itemProp='podcast list'>
             <h2 itemProp='sectionTitle'>

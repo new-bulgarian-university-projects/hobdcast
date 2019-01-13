@@ -13,14 +13,19 @@ import TermsAndConditionsPage from './Pages/TermsAndConditionsPage';
 import {routers} from './utils/routers';
 import Article from './ArticleComponent/Article';
 import Podcast from './PodcastComponent/Podcast';
+import {Helmet} from "react-helmet";
 
 
 class App extends Component {
   render() {
     return (
       <div>       
+        <Helmet>
+            <title>hobdcast</title>
+            <meta name="description" content="Entry point of the hobdcast website" />
+            <meta name="robots" content="index, follow" />
+        </Helmet>
         <Navbar/>
-
         <Grid>
           <Switch>
             <Route exact path='/' component={Home} />

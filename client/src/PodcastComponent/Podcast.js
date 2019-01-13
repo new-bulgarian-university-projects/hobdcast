@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { podcastsData } from '../data/podcasts-mock';
 import {breadcrumbFlows} from '../utils/bcFlow';
 import Custombc from '../BreacrumbComponent/BreadcrumbComponent';
+import {Helmet} from "react-helmet";
 
 class Podcast extends Component{
     render(){
@@ -37,6 +38,11 @@ class Podcast extends Component{
 
         return(
             <div>
+                 <Helmet>
+                    <title>hobdcast - {podcast.title}</title> 
+                    <meta name="description" content={`Podcast - ${podcast.shortDescription}`} />
+                    <meta name="robots" content="index, follow" />
+                </Helmet>
                 <Custombc bcFlow={podcastBcFlow} />
                 <section itemScope>
                     <h3 itemProp='title'>{podcast.title}</h3>

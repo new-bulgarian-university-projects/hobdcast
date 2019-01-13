@@ -3,6 +3,7 @@ import {breadcrumbFlows} from '../utils/bcFlow';
 import {articlesData } from '../data/articles-mock';
 import Custombc from '../BreacrumbComponent/BreadcrumbComponent';
 import {Image} from 'react-bootstrap';
+import {Helmet} from "react-helmet";
 
 
 class Article extends Component{
@@ -25,6 +26,11 @@ class Article extends Component{
 
         return(
             <div>
+                <Helmet>
+                    <title>hobdcast - {article.title}</title> 
+                    <meta name="description" content={`Article - ${article.title}`} />
+                    <meta name="robots" content="index, follow" />
+                </Helmet>
                 {breadcrumbs}
                 <article itemScope>
                     <h1 itemProp='title'>
