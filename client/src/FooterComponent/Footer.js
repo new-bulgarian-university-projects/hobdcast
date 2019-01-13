@@ -15,13 +15,13 @@ class Footer extends Component{
 
                 <Navbar.Collapse>
                     <Nav>
-                    <NavItem eventKey={1} href={`${constants.serverUrl}/xml/sitemap`}>
+                    <NavItem eventKey={1} href={`${constants.serverUrl}/sitemap.xml`}>
                         Sitemap
                     </NavItem>
-                    <NavItem eventKey={2} href={`${constants.serverUrl}/xml/imagemap`}>
+                    <NavItem eventKey={2} href={`${constants.serverUrl}/imagemap.xml`}>
                         Imagemap
                     </NavItem>
-                    <NavItem eventKey={3} href={`${constants.serverUrl}/xml/videomap`}>
+                    <NavItem eventKey={3} href={`${constants.serverUrl}/videomap.xml`}>
                         Videomap
                     </NavItem>
                     </Nav>
